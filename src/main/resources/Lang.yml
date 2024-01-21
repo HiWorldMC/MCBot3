@@ -1,0 +1,35 @@
+Bind_Receive: "§a收到来自QQ的绑定申请 申请QQ:%qq% §a如是本人操作请输入§e/Bind §a确定绑定 如不是本人操作输入§e/UnBind"
+Bind_GroupReceive: " 请在游戏内输入指令 /Bind  来确认绑定"
+Bind_GroupOffline: '此ID未在线 请登录游戏后在进行绑定'
+Bind_Repetition: ' 你已经绑定过ID了 无法在绑定了'
+Bind_Repetition2: ' 此ID已经被其他QQ绑定 无法绑定'
+Bind_Success: '§aQQ绑定成功 领取绑定奖励请输入 §e#领取绑定奖励'
+Bind_Success2: 'QQ绑定成功'
+Bind_NotApply: '&a你还未收到绑定申请'
+Bind_Null: '你还未绑定ID 请先绑定ID'
+PlayerList: '\n当前在线玩家 %Player_Count% 人\n在线列表: %Player_List%'
+Group_NotPermission: "你没有权限这样做"
+Group_CommandRun: "指令执行成功"
+Group_CommandError: "指令错误 请检查指令"
+Mail_PlayerNonEntity: "未查到此人游戏ID 无法发送邮件"
+Mail_send: "邮件发送成功"
+Mail_Null: "&c你没有可领取的邮件"
+Mail_ConfigNull: "&c没有找到此邮件模板 请检查配置文件"
+Mail_Title: "&6&l邮箱 点击你要领取的邮件"
+MailGroup_Not: "邮箱功能不可用（群组暂时不可使用此功能）"
+JoinGroup_Return1: " 欢迎回来！未查询到你的游戏ID 可能你没有注册过游戏、或者没有绑定ID 赶快去游戏里绑定ID吧！"
+JoinGroup_Return2: " 欢迎回来！ 你的游戏ID是：%Player_Name% 如果忘记密码可联系管理员修改"
+JoinGroup_New1: " 欢迎来到勿忘MC——虚无人生\n游玩服务器前往群文件下载客户端，服务器教程:http://jc.mcxwrs.com\n游戏注册后请尽快绑定QQ 绑定指令: #绑定ID [ID]\n例如: #绑定ID Binggun"
+JoinGroup_New2: " 欢迎来到勿忘MC——虚无人生 你的邀请人为: %Player_InvitorId%\n游玩服务器前往群文件下载客户端，服务器教程:http://jc.mcxwrs.com\n游戏注册后请尽快绑定QQ 绑定指令: #绑定ID [ID]\n例如: #绑定ID Binggun"
+Sign_Repetition: "&c你今天已经签到过了 无需签到"
+Sign_Repetition2: "你今天已经签到过了 无需签到"
+Give_Success: "向%player% 发送邮件成功"
+Give_SuccessAllZ: "向 所有在线玩家 发送邮件成功"
+Give_SuccessAll: "向 所有玩家 发送邮件成功"
+Give_SuccessAllN: "向 %Tiem%天内在线的玩家 发送邮件成功"
+Give_SuccessAllF: "向 %Tiem%天未内在线的玩家 发送邮件成功"
+Money_Info: "你的金币余额为: %Money%"
+CMD_Forbidden: "指令被禁用"
+CMD_Error: "错误的指令"
+Bind_Verification_Error: "验证码错误 请重试"
+Bot_Start: "[+]服务器重启完成 可以登录游戏了哦"

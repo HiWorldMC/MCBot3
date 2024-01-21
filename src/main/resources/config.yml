@@ -1,0 +1,206 @@
+Command:
+  CMDPrefix:
+    - "!"
+    - "&"
+    - "#"
+  CMDAlias:
+    Bind:
+      - "绑定ID"
+      - "绑定id"
+      - "ID绑定"
+      - "bind"
+      - "Bind"
+    Money:
+      - "查询金币"
+      - "查询游戏币"
+    GetPoint:
+      - "查询点券"
+      - "点券查询"
+    Pay:
+      - "转账"
+      - "pay"
+    List:
+      - "在线名单"
+      - "在线列表"
+      - "在线人数"
+    CMD:
+      - "/"
+      - "指令"
+      - "命令"
+    Mail:
+      - "邮件"
+      - "邮箱"
+      - "yj"
+      - "发邮件"
+    Sign:
+      - "签到"
+      - "qd"
+      - "打卡"
+    Give:
+      - "发物品"
+      - "奖励"
+      - "赠送"
+  ##禁用的指令
+  Forbidden:
+    - Pay
+    - GetPoint
+CustomCommand:
+  ##指令名 不可重复 指令可用于制作机器人菜单 /bot reload 无法重载指令运行 需要重启服务器
+  ## %args0%= 指令的第一个参数 %args1% =指令的第二个参数 以此类推 例如
+  ## #菜单 Binggun 会将%args0% 替换未Binggun
+  ## %QQ% 发送人QQ
+  ## %args0% 第一个指令参数
+  ##如果配合离线变量插件 将发生什么？
+  Tps:
+    #指令别名
+    Alias:
+      - "tps"
+      - "延迟"
+    #运行指令后的提示语 可使用服务器变量(不可使用 玩家变量)
+    Msg: "&7TPS: %server_tps_5% &a延迟: &7%player_ping%ms"
+    #运行指令后的 指令
+    Command:
+      - "tps"
+  CD:
+    Alias:
+      - "菜单"
+    Msg: "#绑定ID [ID]%n% 你的ID:%Bot_Bind_Name_%QQ%%  %args0%"
+
+##群聊天互通设置
+##变量{UseName} 群用户名不可用于  GroupNews
+##变量{PlayerName} 游戏名 不可用于  ServeNews
+##变量{Msg} 消息
+##机器人QQ
+GroupChat:
+  ##同步到那个群号里
+  Group:
+    - 761859818
+  #是否开启互通
+  Start: true
+  #群收到的消息
+  GroupNews: "来自游戏内消息\n%name%：%Msg%"
+  ServeNews: "[群消息]:%name%说:%Msg%"
+  ##聊天互通前缀 为空或 Null时任何消息都会被同步
+  Prefix: "."
+  ##为false时 不同步前置为指令前缀的消息
+  ISCMD: false
+  ##删除则不启用
+  JoinServer: "[+] %name% 加入了游戏"
+  QuitServer: "[-] %name% 离开了游戏"
+  #群名片设置
+  MemberName:
+    #是否强制群名片格式
+    Coerce: true
+    #群名片格式 支持正则 %name%为绑定的ID 如未绑定则显示原群名片
+    Format: "%name%[a-zA-Z0-9_\u4e00-\u9fa5]*"
+    #如果未开启强制群名片 则警告不满足格式的玩家 不需要则删除
+    Warning: "你的群名片不正确 请将群名片修改为 %name%"
+##@设置 指令/at 可以配合自定义机器人命令制作开关选项
+GroupAt:
+  Enable: false
+  GroupMsg: "%Player_name% 在游戏了@了你 他可能找你有事"
+  #因为是群内发送 无法使用PAPI变量
+  ServerMsg: "%player% 在群里@了你 他可能找你有事"
+  #游戏屏幕字显示
+  TitleDisplay: true
+  #聊天栏显示
+  ChatDisplay: true
+  #提示声音
+  Sound: "ENTITY_PIG_AMBIENT"
+  #每次@的冷却时间 tick
+  Cooling: 300
+  #每次最多@多少人
+  MaxAtCount: 3
+  #每天最多@多少次
+  DayMaxAtCount: 10
+Bind:
+  ##未绑定QQ 是否拒绝进服(开启后可代替白名单插件）
+  RefusedJoin: false
+  VerificationLore:
+    - "&f&l白名单"
+    - "&c你未绑定QQ 请前往QQ群:12345 进行绑定"
+    - "&e你的验证码为: &f&l%Verification% &e在群内输入&f&l#绑定ID %Verification%"
+    - "&c请在 五分钟内绑定"
+  #绑定申请过期时间 tick
+  OverdueTime: 6000
+  RewardMail:
+      Item: #显示的物品
+        Type: STONE
+        Name: "&a绑定奖励"
+        lore:
+          - "&a奖励：&e钻石+10"
+          - "&a邮件时间：&e%Mail_SendTiem%"
+      Msg: "&a领取成功"
+      Command:
+        - "fgive %player% 钻石 10"
+  #退出群聊后是否解除绑定
+  QuitNuBind: false
+  Blacklist:
+    - 123456
+##签到配置
+##变量%Player_Name%玩家名
+##变量%Bot_Invitation%" 邀请人数
+Sign:
+  Group:
+    Default:
+      Command:
+      - "Point give %Player_name% %Bot_Invitation%"
+      - "fgive %Player_name% 钻石 3"
+      Msg: "领取成功奖励： 钻石+3 点券 %Bot_Invitation%"
+    ##拥有MCBot.QD.VPI1的权限 签到运行 除了  Default权限越大 应当往前写
+    VPI1:
+      Command:
+        - "Point give %Player_name% %Bot_Invitation%"
+        - "fgive %Player_name% 钻石 3"
+      Msg: "领取成功奖励： 钻石+3 点券 %Bot_Invitation%"
+  Mail:
+    Item: #显示的物品
+      Type: STONE
+      Name: "&a签到奖励"
+      lore:
+        - "&a邮件时间：&e%Mail_SendTiem%"
+    Msg: "&a领取成功"
+
+##邀请奖励设置(暂未完成 目前只变量生效)
+Invitation:
+  ##被邀请人绑定ID后给予邀请人奖励：
+  Reward:
+    Item: #显示的物品
+      Type: STONE
+      Name: "&a物品邮件"
+      CustomModelData: 0
+      lore:
+        - '&a物品奖励： &e未知'
+        - '&a邮件时间：&e%Mail_SendTiem%'
+    command:
+      - "Point give %Player_name% %Bot_Invitation%"
+  ##成功邀请并绑定ID 签到{Invitation} 变量数+2...
+  Ratio: 2
+  ##成功邀请入群未绑定ID 签到{Invitation} 变量数+1...
+  NoBing: 1
+MySQL:
+  Enable: false
+  ##用户名
+  username: root
+  ##密码
+  password: root
+  ##数据库链接地址
+  hostname: localhost:3306
+  ##链接到的库
+  database: Minecraft
+  tablePrefix: Bot_
+  additional: "useSSL=true&useUnicode=true&amp&characterEncoding=UTF-8&connectTimeout=43200000"
+##启动的群号
+Bot:
+  EnableBot: false
+  Group:
+    - 761859818
+  #管理员QQ账号
+  Admin:
+    - 1728482805
+  ##机器人QQ
+  BotQQ: 728482805
+  ##链接密钥
+  VerifyKey: 728482805
+  ##机器人链接地址
+  WebSocketIP: "0.0.0.0:4488"

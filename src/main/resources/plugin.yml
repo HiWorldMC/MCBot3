@@ -1,0 +1,22 @@
+name: MCBot
+version: '3.6.11'
+main: com.binggun.mcplugin.MCBotJavaPlugin
+authors: [ FBinggun ]
+depend:
+  - MySqlAPI
+commands:
+  Bind:
+  UnBind:
+  Bot:
+    aliases:
+      - mcbot
+  Mail:
+    aliases:
+      - yj
+      - 邮箱
+      - yx
+  Sign:
+    aliases:
+      - qd
+      - 签到
+  At:

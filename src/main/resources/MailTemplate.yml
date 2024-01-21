@@ -1,0 +1,22 @@
+Reward: #可自定义
+  Item:  #显示的物品
+    Type: STONE
+    Name: "奖励"
+    CustomModelData: 0
+    lore:
+      - '奖励：钻石+20'
+      - '邮件时间：%Mail_SendTiem%'
+  command: #
+    - fgive %Player% 钻石 20
+  Msg: 领取成功
+物品: #可自定义
+  Item:  #显示的物品
+    Type: STONE
+    Name: "&a物品邮件"
+    CustomModelData: 0
+    lore:
+      - '&a物品奖励： &e未知'
+      - '&a邮件时间：&e%Mail_SendTiem%'
+  command: #
+    - fgive %Player% %args1% %args2%
+  Msg: '&a领取成功'
